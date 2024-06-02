@@ -1,0 +1,22 @@
+
+{% extends "./layouts/_base.html" %}
+
+{% block title %}Youtube Downloader{% endblock title %}
+
+{% block content %}
+    
+    <h1 class="text-white text-5xl font-bold uppercase gradient-text">Descargar Video de YouTube</h1>
+
+    <div class="w-full h-32 flex flex-col justify-between items-center mt-4">
+        <form method="POST" class="w-1/2 bg-yellow-400 p-4 m-4 rounded-md flex gap-2" enctype="multipart/form-data" id="downloadForm">
+            {% csrf_token %}
+            <input type="text" name="url" placeholder="Copia el URL del Video" class="w-full border-2 border-indigo-900 rounded-md py-2 px-2 placeholder-indigo-900 text-orange-700" required>
+            <button type="submit" class="bg-blue-800 px-2 rounded-md font-bold uppercase text-white hover:bg-blue-500">
+                download
+            </button>
+        </form>
+    </div>
+
+
+
+{% endblock content %}
